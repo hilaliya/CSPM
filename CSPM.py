@@ -122,7 +122,7 @@ def cspm(loc,obj,time, **kwargs):
     # for i in range(1,n+1):
     #     k9 = mdl.add(Ra[i]>=B*Bmin*x[i])  
      
-    #K9 (14)
+    #K10 (15-18)
     for i in range(1,n+1):
         kq = mdl.add(mdl.if_then(x[i]==0,Rd[i]-Ra[i]==0))
         kq = mdl.add(mdl.if_then(x[i]==0,Td[i]-Ta[i]==0))
