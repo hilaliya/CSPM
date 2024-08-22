@@ -13,16 +13,14 @@ from openpyxl import load_workbook
 
 model="cspm"    
 modl=eval(model)
-objective="number_of_stops"  #traveltime, cost, multi, number_of_stops
-time=100
-usetime=False
-loc= "case.xlsx" 
+objective="cost"  #traveltime, cost, multi, number_of_stops
+time=1200 #max solve time (seconds)
+usetime=True
+loc='test3.xlsx' #"case_study.xlsx" 
 wb = load_workbook(loc, keep_vba=False, data_only=True)
 ws = wb.active
-if usetime:
-    mdl =modl(loc, objective, time)
-else:
-    mdl =modl(loc, objective)
+mdl =modl(loc, objective, time)
+
 wb.close()
     
 
@@ -32,15 +30,14 @@ if mdl.solve():
     
     print("\n-----------------------------",
           "\n  ***We Have A Solution!***", "\n-----------------------------\n")
-   # mdl.print_solution()
-
+    #mdl.print_solution()
     print("Case study")
     print(mdl.solve_details)
     print("Solve time:", round(mdl.solve_details.time,2))
     print("Objective: ", round( mdl.objective_value,2))  
     print(mdl.report_kpis())
     
-    with open("case_%s.txt" %(objective), "w") as solfile:
+    with open(loc[:-5]+"_%s.txt" %(objective), "w") as solfile:
         solfile.write(mdl.solution.to_string())   
             
                 
