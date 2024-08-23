@@ -80,7 +80,6 @@ An example problem setup is provided in `CSPM.py`. This script contains sample d
 
 To run the model, you need the following Python packages:
 
-- **gc**: Python's garbage collector interface, used for managing memory.
 - **openpyxl**: For reading and writing Excel files, specifically for loading the problem data from an Excel file.
 - **docplex**: IBM Decision Optimization CPLEX Modeling for Python, used for formulating and solving the MILP model.
 - **collections**: To handle the data structure for problem elements.
