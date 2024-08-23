@@ -71,10 +71,11 @@ python main.py
 ```
 
 Ensure that the problem data is properly configured in the script or provided as input.
+The MILP model is given in `CSPM.py`.
 
 ## Example
 
-An example problem setup is provided in `CSPM.py`. This script contains sample data for running the model. Modify the parameters as needed to test different scenarios.
+An example problem setup is provided in `case_study.xlsx`. This file contains problem data. Modify the parameters as needed to test different scenarios.
 
 ## Requirements
 
