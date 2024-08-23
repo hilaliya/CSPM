@@ -13,7 +13,7 @@ modl=eval(model)
 objective="cost"  #traveltime, cost, multi, number_of_stops
 time=1200 #max solve time (seconds)
 usetime=True
-loc="case_study.xlsx" 
+loc="toyproblem.xlsx" 
 wb = load_workbook(loc, keep_vba=False, data_only=True)
 ws = wb.active
 mdl =modl(loc, objective, time)
