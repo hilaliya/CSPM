@@ -75,7 +75,7 @@ The MILP model is given in `CSPM.py`.
 
 ## Example
 
-An example problem setup is provided in `case_study.xlsx`. This file contains problem data. Modify the parameters as needed to test different scenarios.
+An example problem setup is provided in `toyproblem.xlsx`. This file contains problem data. Modify the parameters as needed to test different scenarios.
 
 ## Requirements
 
