@@ -5,8 +5,6 @@ Created on Fri Apr  1 21:14:20 2022
 @author: Hilal YILMAZ
 """
 
-
-
 import gc
 from CSPM import cspm
 from openpyxl import load_workbook
@@ -20,10 +18,7 @@ loc='test3.xlsx' #"case_study.xlsx"
 wb = load_workbook(loc, keep_vba=False, data_only=True)
 ws = wb.active
 mdl =modl(loc, objective, time)
-
-wb.close()
-    
-
+wb.close()   
 mdl.print_information()
 
 if mdl.solve():
@@ -39,8 +34,7 @@ if mdl.solve():
     
     with open(loc[:-5]+"_%s.txt" %(objective), "w") as solfile:
         solfile.write(mdl.solution.to_string())   
-            
-                
+                          
 else:
     print("Problem could not be solved ")
     print(mdl.get_solve_details())
