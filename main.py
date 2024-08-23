@@ -6,18 +6,14 @@ Created on Fri Apr  1 21:14:20 2022
 """
 
 from CSPM import cspm
-from openpyxl import load_workbook
 
-model="cspm"    
-modl=eval(model)
-objective="cost"  #traveltime, cost, multi, number_of_stops
-time=1200 #max solve time (seconds)
-usetime=True
-loc="toyproblem.xlsx" 
-wb = load_workbook(loc, keep_vba=False, data_only=True)
-ws = wb.active
-mdl =modl(loc, objective, time)
-wb.close()   
+loc='toyproblem.xlsx'   # the directory of the problem data
+objective="multi"       #traveltime, cost, multi, number_of_stops
+time=1200               #max solve time (seconds)
+usetime=True            #if True, the model gives a solution under a time limit specified in "time"
+
+
+mdl =cspm(loc, objective, time)    
 mdl.print_information()
 
 if mdl.solve():
@@ -25,15 +21,16 @@ if mdl.solve():
     print("\n-----------------------------",
           "\n  ***We Have A Solution!***", 
           "\n-----------------------------\n")
-    #mdl.print_solution()
+   #mdl.print_solution()
     print(mdl.solve_details)
     print("Solve time:", round(mdl.solve_details.time,2))
-    print("Objective: ", round( mdl.objective_value,2))  
+    print("Objective: ", round( mdl.objective_value,2), "\n")  
     mdl.report_kpis()
     
     with open(loc[:-5]+"_%s.txt" %(objective), "w") as solfile:
         solfile.write(mdl.solution.to_string())   
-                          
+            
+                
 else:
     print("Problem could not be solved ")
     print(mdl.get_solve_details())
