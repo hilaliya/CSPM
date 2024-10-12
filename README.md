@@ -94,7 +94,7 @@ pip install gc openpyxl docplex collections
 
 ## References
 
-1. Yılmaz & Yagmahan (2024), "Optimization of the Electric Vehicle Charging Strategy Problem for Sustainable Intercity Travels with Multiple Refueling Stops", Sustainable Energy, Grids and Networks, 
+1. Yılmaz & Yagmahan (2024), "Optimization of the Electric Vehicle Charging Strategy Problem for Sustainable Intercity Travels with Multiple Refueling Stops", Sustainable Energy, Grids and Networks, https://doi.org/10.1016/j.segan.2024.101546
 
 
 ## License
